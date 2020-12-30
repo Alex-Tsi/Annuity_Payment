@@ -12,11 +12,7 @@ public class BankCalculate {
     JLabel overPayment;
     JLabel totalPayment;
 
-    public static void main(String[] args) {
-        new BankCalculate().setUpGui();
-    }
-
-    private void setUpGui() {
+    public void setUpGui() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +80,7 @@ public class BankCalculate {
         totalPayment = new JLabel("");
     }
 
-    class CalculateActionListener implements ActionListener {
+    private class CalculateActionListener implements ActionListener {
         float rate;
         int period;
         int credit;
@@ -111,7 +107,7 @@ public class BankCalculate {
             totalPayment.setText(Float.toString(Math.round(anuityCalculate(rate, period, credit) * period)));
         }
 
-        public float anuityCalculate(float r, int p, int c) {
+        private float anuityCalculate(float r, int p, int c) {
             float tempPerc = r / 100 / 12;
             float newPerc = tempPerc + 1;
             float powPercent = 1;
@@ -122,7 +118,7 @@ public class BankCalculate {
         }
     }
 
-    class ClearActionListener implements ActionListener {
+    private class ClearActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             inputCredit.setText("");
