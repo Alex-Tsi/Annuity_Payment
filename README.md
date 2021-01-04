@@ -1,3 +1,3 @@
 # Bank_Calculator
-Сделан на примере
+Done like with
 https://www.banki.ru/services/calculators/credits/
